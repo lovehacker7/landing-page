@@ -1,4 +1,10 @@
 /* General Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', 'Arial', sans-serif;
   margin: 0;
@@ -172,6 +178,8 @@ header .tagline {
   gap: 8px;
   position: relative;
   overflow: hidden;
+  /* Aseguramos que el botón se adapte al contenido */
+  max-width: 100%;
 }
 
 .cta-button::after {
@@ -254,6 +262,12 @@ footer a:hover::after {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+
+  /* Ajuste opcional para botones en tablets */
+  .cta-button {
+    font-size: 1rem;
+    padding: 14px 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -267,10 +281,13 @@ footer a:hover::after {
 
   /* Ajustes para el botón en pantallas pequeñas */
   .cta-button {
-    width: 100%;
+    display: block;         /* Para permitir que se comporte como bloque */
+    width: 100%;            /* Ocupa todo el ancho disponible */
+    max-width: 100%;
+    text-align: center;     /* Centra el contenido */
     justify-content: center;
-    padding: 12px 25px; /* Se reduce el padding para mayor comodidad */
-    font-size: 1rem;    /* Se ajusta el tamaño de fuente */
+    padding: 12px 25px;     /* Se reduce el padding para mayor comodidad */
+    font-size: 1rem;        /* Se ajusta el tamaño de fuente */
   }
 }
 
