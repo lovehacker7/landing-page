@@ -19,66 +19,56 @@ body {
 header {
   background: linear-gradient(135deg, #ff4b8b, #ff6678);
   color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Separa la parte superior (header-nav) del contenido principal */
+  padding: 120px 0 100px; /* Header más extendido verticalmente */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -5%;
+  width: 110%;
+  height: 100px;
+  background: #fff;
+  transform: rotate(-3deg);
+  z-index: 1;
 }
 
+/* Logo: estilo del primer código, pero un poco más grande */
 header .logo {
-  width: 120px;
+  width: 140px; /* Aumentado de 120px */
   transition: transform 0.3s ease;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
 }
 
 header .logo:hover {
   transform: scale(1.1);
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 30px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ffd1dc;
-}
-
-/* Contenido principal del header (titulo y tagline) */
-.header-content {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-
-.header-content h1 {
-  font-size: 3rem;
+/* Título y subtítulo del header (mejorados según el segundo diseño) */
+header h1 {
+  font-size: 3.2rem;
   margin: 0;
   font-weight: 700;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header-content .tagline {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+header .tagline {
+  font-size: 1.3rem;
+  margin: 15px 0 0;
   font-weight: 300;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
 }
 
 /* Hero Section */
@@ -252,17 +242,7 @@ footer a:hover::after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  .header-content h1 {
+  header h1 {
     font-size: 2.4rem;
   }
 
@@ -277,7 +257,7 @@ footer a:hover::after {
 }
 
 @media (max-width: 480px) {
-  .header-content h1 {
+  header h1 {
     font-size: 2rem;
   }
 
