@@ -19,7 +19,7 @@ body {
 header {
   background: linear-gradient(135deg, #ff4b8b, #ff6678);
   color: #fff;
-  padding: 120px 0 100px; /* Header más extendido verticalmente */
+  padding: 120px 0 100px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -38,9 +38,9 @@ header::after {
   z-index: 1;
 }
 
-/* Logo: estilo del primer código, pero un poco más grande */
+/* Logo */
 header .logo {
-  width: 140px; /* Aumentado de 120px */
+  width: 140px;
   transition: transform 0.3s ease;
   margin-bottom: 25px;
   position: relative;
@@ -51,7 +51,7 @@ header .logo:hover {
   transform: scale(1.1);
 }
 
-/* Título y subtítulo del header (mejorados según el segundo diseño) */
+/* Título y subtítulo del header */
 header h1 {
   font-size: 3.2rem;
   margin: 0;
@@ -265,9 +265,12 @@ footer a:hover::after {
     font-size: 1.8rem;
   }
 
+  /* Ajustes para el botón en pantallas pequeñas */
   .cta-button {
     width: 100%;
     justify-content: center;
+    padding: 12px 25px; /* Se reduce el padding para mayor comodidad */
+    font-size: 1rem;    /* Se ajusta el tamaño de fuente */
   }
 }
 
