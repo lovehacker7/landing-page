@@ -19,7 +19,7 @@ body {
 header {
   background: linear-gradient(135deg, #ff4b8b, #ff6678);
   color: #fff;
-  padding: 100px 0 80px;
+  padding: 100px 0 120px; /* Se aumenta el padding inferior */
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -29,10 +29,10 @@ header {
 header::after {
   content: '';
   position: absolute;
-  bottom: -50px;
+  bottom: -80px; /* Se mueve el pseudo-elemento más abajo */
   left: -5%;
   width: 110%;
-  height: 100px;
+  height: 120px; /* Se incrementa la altura para extender la zona rosa */
   background: #fff;
   transform: rotate(-3deg);
   z-index: 1;
@@ -45,11 +45,13 @@ header .logo {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   position: relative;
   z-index: 2;
+  backface-visibility: hidden; /* Evita el parpadeo */
+  will-change: transform;      /* Optimiza la animación */
 }
 
 header h1 {
   font-size: 3.2rem;
-  margin: 0;
+  margin: 20px 0 0; /* Se agrega margen superior para separar del logo */
   font-weight: 700;
   letter-spacing: -1px;
   position: relative;
@@ -59,7 +61,7 @@ header h1 {
 
 header .tagline {
   font-size: 1.3rem;
-  margin: 15px 0 0;
+  margin: 10px 0 0; /* Se ajusta el margen para un mejor espaciado */
   font-weight: 300;
   opacity: 0.9;
   position: relative;
