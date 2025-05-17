@@ -2,126 +2,176 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lunara - Elevate your smartphone experience. Clean design, modern features, and effortless elegance curated by Aria Nova.">
-  <meta name="keywords" content="smartphone, luxury phone, modern tech, aria nova, elegant smartphone, minimalist, design, Lunara">
-  <meta name="author" content="Lunara">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Lunara - Elevate your smartphone experience. Clean design, modern features, and effortless elegance curated by Aria Nova." />
+  <meta name="keywords"
+    content="smartphone, luxury phone, modern tech, aria nova, elegant smartphone, minimalist, design, Lunara" />
+  <meta name="author" content="Lunara" />
   <title>Lunara by Aria Nova - Effortless Elegance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+      --color-bg: #f8f9fa;
+      --color-text: #1a1a1a;
+      --color-muted: #7a7a7a;
+      --color-primary: #1a1e29;
+      --color-accent: #d4af7f;
+      --color-card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #1a1a1a;
-      line-height: 1.6;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      font-size: 16px;
     }
 
     header {
-      padding: 3rem 1rem 2rem;
+      padding: 4rem 1rem 2.5rem;
       text-align: center;
-      background: #ffffff;
+      background-color: #fff;
       border-bottom: 1px solid #e0e0e0;
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      color: var(--color-primary);
       margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #222;
     }
 
     header p {
-      font-size: 1rem;
-      color: #777;
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      font-weight: 300;
     }
 
     .hero {
-      padding: 4rem 1rem;
+      background: linear-gradient(to right, #f5f4f2, #ffffff);
       text-align: center;
-      background-color: #fffdfb;
+      padding: 5rem 1rem;
     }
 
     .hero h2 {
-      font-size: 1.8rem;
-      color: #333;
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--color-primary);
       margin-bottom: 1rem;
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto 2rem;
-      font-size: 1rem;
-      color: #555;
+      color: var(--color-muted);
+      font-size: 1.05rem;
     }
 
     .cta-button {
-      background-color: #a6d3c8;
-      color: #1a1a1a;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 30px;
+      background-color: var(--color-primary);
+      color: #fff;
+      padding: 0.9rem 2.5rem;
       font-size: 1rem;
-      text-decoration: none;
+      border: none;
+      border-radius: 50px;
       font-weight: 500;
-      transition: background-color 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #8dc2b5;
+      background-color: #333b50;
+      transform: translateY(-2px);
     }
 
     .products {
-      background-color: #fafafa;
-      padding: 4rem 1rem;
+      background-color: #fbfbfb;
+      padding: 5rem 1rem;
       text-align: center;
     }
 
     .products h2 {
-      font-size: 1.6rem;
-      color: #1f1f1f;
-      margin-bottom: 2rem;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 3rem;
     }
 
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .product-card {
-      background: #ffffff;
+      background-color: var(--color-card);
       padding: 2rem;
-      border-radius: 16px;
-      border: 1px solid #e6e6e6;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
     }
 
     .product-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      color: #111;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: var(--color-primary);
     }
 
     .product-card p {
-      font-size: 0.95rem;
-      color: #666;
+      color: var(--color-muted);
+      font-size: 1rem;
     }
 
     footer {
+      background-color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      background-color: #ffffff;
-      color: #888;
+      padding: 2.5rem 1rem;
+      color: #999;
+      font-size: 0.95rem;
       border-top: 1px solid #e0e0e0;
     }
 
     footer a {
-      color: #a6d3c8;
+      color: var(--color-accent);
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.7rem;
+      }
+
+      .cta-button {
+        padding: 0.8rem 2rem;
+      }
+
+      .product-card {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -163,4 +213,3 @@
 </body>
 
 </html>
-
