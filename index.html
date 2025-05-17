@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FitForge | Transform Your Body & Mind</title>
   <style>
     :root {
@@ -12,127 +11,186 @@
       --secondary: #ffc44d;
       --dark: #142135;
       --light: #f0f4f8;
-      --text: #333;
+      --text: #333333;
+      --radius: 12px;
+      --shadow-light: rgba(0, 0, 0, 0.08);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
+    *, *::before, *::after {
       box-sizing: border-box;
     }
 
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, var(--light), #fff);
+      background: linear-gradient(90deg, var(--light) 40%, #fff);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.5;
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     header {
-      padding: 2rem;
       background-color: var(--dark);
-      color: white;
+      color: #fff;
+      padding: 1.75rem 2rem;
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 10;
+      font-weight: 600;
+      letter-spacing: 2px;
+      user-select: none;
+      box-shadow: 0 2px 8px var(--shadow-light);
+      text-transform: uppercase;
+      font-size: 1.25rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    header p {
+      margin-top: 0.25rem;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      opacity: 0.75;
     }
 
     .hero {
-      padding: 4rem 2rem;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      text-align: center;
+      align-items: center;
+      padding: 6rem 2rem;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      transition: all 0.5s ease-in-out;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      transition: background 0.4s ease;
     }
 
     .hero h2 {
-      font-size: 3rem;
+      font-size: 3.75rem;
+      font-weight: 700;
       margin-bottom: 1rem;
+      letter-spacing: 1.2px;
+      line-height: 1.1;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
+      font-weight: 400;
+      font-size: 1.25rem;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.85;
+      letter-spacing: 0.04em;
     }
 
     .cta-button {
-      margin-top: 2rem;
-      padding: 0.75rem 2rem;
       background: #fff;
       color: var(--primary);
       border: none;
-      border-radius: 50px;
-      font-weight: bold;
+      padding: 0.85rem 3rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 77, 77, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
+      letter-spacing: 1.1px;
     }
 
-    .cta-button:hover {
-      background: var(--light);
-      transform: scale(1.05);
+    .cta-button:hover,
+    .cta-button:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(255, 77, 77, 0.45);
+      outline: none;
     }
 
     .resources {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      background: #fff;
       padding: 4rem 2rem;
-      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.75rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .card {
-      background-color: var(--light);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-in-out;
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 2.2rem 2.5rem;
+      box-shadow: 0 12px 30px var(--shadow-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.12);
     }
 
     .card h3 {
+      font-weight: 700;
       color: var(--dark);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.03em;
+      font-size: 1.25rem;
+      user-select: none;
     }
 
     .card p {
+      font-weight: 400;
+      color: #555;
       font-size: 1rem;
-      color: #444;
+      line-height: 1.5;
+      letter-spacing: 0.025em;
+      flex-grow: 1;
+      user-select: none;
     }
 
     footer {
       background-color: var(--dark);
       color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.8rem 1rem;
+      font-weight: 300;
+      font-size: 0.9rem;
+      user-select: none;
+      letter-spacing: 0.1em;
+      margin-top: auto;
     }
 
     @media (min-width: 768px) {
       .hero {
         flex-direction: row;
         text-align: left;
-        justify-content: space-around;
+        padding: 8rem 6rem;
+        clip-path: none;
       }
 
       .hero h2 {
-        font-size: 4rem;
+        font-size: 4.5rem;
+        max-width: 520px;
       }
 
       .hero p {
         font-size: 1.5rem;
+        max-width: 600px;
+        margin-left: 3rem;
+      }
+
+      .cta-button {
+        margin-left: 3rem;
+        align-self: start;
       }
     }
   </style>
@@ -140,39 +198,39 @@
 
 <body>
   <header>
-    <h1>FitForge</h1>
+    FitForge
     <p>Your Ultimate Transformation Hub</p>
   </header>
 
-  <section class="hero">
+  <section class="hero" aria-label="Hero Section">
     <div>
       <h2>Forge Your New Self</h2>
       <p>Join thousands who’ve transformed their lives through dedication, mindset, and strategic training.</p>
-      <button class="cta-button">Get Started</button>
+      <button class="cta-button" aria-label="Get Started with FitForge">Get Started</button>
     </div>
   </section>
 
-  <section class="resources">
-    <div class="card">
+  <section class="resources" aria-label="Resources">
+    <article class="card" tabindex="0">
       <h3>Ultimate Training Guide</h3>
       <p>A comprehensive, step-by-step workout system for fat loss and muscle building.</p>
-    </div>
-    <div class="card">
+    </article>
+    <article class="card" tabindex="0">
       <h3>Nutrition Plan Blueprint</h3>
       <p>Science-backed strategies to fuel your body and mind with the right foods.</p>
-    </div>
-    <div class="card">
+    </article>
+    <article class="card" tabindex="0">
       <h3>Mindset Mastery Course</h3>
       <p>Learn how to build mental toughness and unlock your true potential.</p>
-    </div>
-    <div class="card">
+    </article>
+    <article class="card" tabindex="0">
       <h3>FitForge Community</h3>
       <p>Connect with like-minded individuals who share your passion for growth and greatness.</p>
-    </div>
+    </article>
   </section>
 
   <footer>
-    <p>&copy; 2025 FitForge. All Rights Reserved.</p>
+    &copy; 2025 FitForge. All Rights Reserved.
   </footer>
 </body>
 
