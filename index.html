@@ -1,341 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FitForge | Transform Your Body & Mind</title>
-  <style>
-    :root {
-      --primary: #4caf50;
-      --secondary: #a5d6a7;
-      --accent: #ffc107;
-      --dark: #2e3a2e;
-      --light: #f9faf7;
-      --text: #333333;
-      --radius: 12px;
-      --shadow-light: rgba(46, 58, 46, 0.1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(90deg, var(--light) 40%, #fff);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* HEADER */
-    header {
-      padding: 2rem 1.5rem;
-      background-color: var(--dark);
-      color: var(--light);
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px var(--shadow-light);
-      letter-spacing: 0.15em;
-      user-select: none;
-      border-bottom: 3px solid var(--accent);
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    header p {
-      font-weight: 600;
-      font-style: italic;
-      color: var(--secondary);
-      letter-spacing: 0.08em;
-      font-size: 1.1rem;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--light);
-      border-radius: var(--radius);
-      margin: 2rem;
-      box-shadow: 0 14px 40px rgba(76, 175, 80, 0.3);
-      overflow: hidden;
-      animation: fadeInUp 1s ease forwards;
-      align-items: stretch; /* Asegura que hijos tengan la misma altura */
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-content {
-      max-width: 600px;
-      z-index: 2;
-    }
-
-    .hero h2 {
-      font-size: 3.4rem;
-      margin-bottom: 1rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      line-height: 1.1;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero p {
-      font-size: 1.4rem;
-      line-height: 1.5;
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* CTA BUTTON */
-    .cta-button {
-      padding: 1rem 3rem;
-      background: linear-gradient(90deg, #ffc107 0%, #ffb300 100%);
-      color: var(--dark);
-      border: none;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.5);
-      user-select: none;
-      letter-spacing: 0.05em;
-      filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.1));
-    }
-
-    .cta-button:hover,
-    .cta-button:focus {
-      background: linear-gradient(90deg, #fff176 0%, #fbc02d 100%);
-      color: var(--dark);
-      transform: translateY(-6px) scale(1.05);
-      box-shadow: 0 18px 40px rgba(255, 193, 7, 0.65);
-      outline: none;
-    }
-
-    /* Hero image placeholder */
-    .hero-image {
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: var(--radius);
-      box-shadow: 0 14px 40px rgba(46, 58, 46, 0.15);
-      transition: transform 0.3s ease;
-      user-select: none;
-      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
-    }
-
-    .hero-image:hover {
-      transform: scale(1.03) translateY(-5px);
-    }
-
-    /* RESOURCES GRID */
-    .resources {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      padding: 4rem 2rem;
-      background-color: var(--light);
-      margin: 0 2rem 4rem 2rem;
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px var(--shadow-light);
-    }
-
-    .card {
-      background-color: #ffffff;
-      padding: 2.2rem 2rem;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 30px var(--shadow-light);
-      transition: all 0.35s ease-in-out;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      position: relative;
-    }
-
-    .card:hover,
-    .card:focus {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 30px 60px rgba(46, 58, 46, 0.2);
-      background-color: #f9fff9;
-      outline: none;
-    }
-
-    /* Icon before card title */
-    .card h3 {
-      color: var(--dark);
-      margin-bottom: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    /* Simple emoji icons for demo (replace with SVG icons if you want) */
-    .card h3::before {
-      content: "🔥";
-      font-size: 1.6rem;
-      display: inline-block;
-      transform: translateY(2px);
-    }
-
-    .card:nth-child(2) h3::before {
-      content: "🥗";
-    }
-
-    .card:nth-child(3) h3::before {
-      content: "🧠";
-    }
-
-    .card:nth-child(4) h3::before {
-      content: "🤝";
-    }
-
-    .card p {
-      font-size: 1.05rem;
-      color: #555555;
-      line-height: 1.6;
-      font-weight: 500;
-      flex-grow: 1;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #3b4a3b;
-      color: var(--light);
-      text-align: center;
-      padding: 1.8rem 1rem;
-      letter-spacing: 0.1em;
-      font-weight: 500;
-      font-size: 0.9rem;
-      user-select: none;
-      margin-top: auto;
-    }
-
-    /* RESPONSIVE LAYOUT */
-    @media (min-width: 768px) {
-      .hero {
-        flex-direction: row;
-        text-align: left;
-        justify-content: space-around;
-        margin: 4rem 3rem 2rem 3rem;
-        align-items: stretch; /* Asegura que hijos tengan misma altura */
-      }
-
-      .hero-content {
-        max-width: 480px;
-      }
-
-      .hero h2 {
-        font-size: 4.5rem;
-        line-height: 1.05;
-      }
-
-      .hero p {
-        font-size: 1.5rem;
-        margin-bottom: 3rem;
-      }
-
-      .hero-image {
-        max-width: none; /* El flex:1 controla el tamaño */
-        height: auto; /* Mantener altura natural en móvil */
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .hero h2 {
-        font-size: 2.6rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-
-      .cta-button {
-        width: 100%;
-        padding: 1rem 0;
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LoveHacker - Your ultimate guide to mastering dating and relationships. Discover proven strategies, e-books, and courses to transform your love life.">
+  <meta name="keywords" content="dating, relationships, love, e-books, dating tips, love language, flirting, attraction, LoveHacker">
+  <meta name="author" content="LoveHacker">
+  <title>LoveHacker - Master the Art of Dating and Relationships</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="icon" type="image/png" href="https://imgur.com/32GtTrB.png">
 </head>
-
 <body>
   <header>
-    <h1>FitForge</h1>
-    <p>Your Ultimate Transformation Hub</p>
+    <div class="container">
+      <img src="https://imgur.com/32GtTrB.png" alt="LoveHacker Logo" class="logo animate__animated animate__fadeIn">
+      <h1 class="animate__animated animate__fadeInDown">LoveHacker</h1>
+      <p class="tagline animate__animated animate__fadeInUp">Your Ultimate Guide to Mastering Dating and Relationships</p>
+    </div>
   </header>
 
-  <section class="hero" aria-label="Hero Section with call to action">
-    <div class="hero-content">
-      <h2>Forge Your New Self</h2>
-      <p>Join thousands who’ve transformed their lives through dedication, mindset, and strategic training.</p>
-      <button class="cta-button" aria-label="Get Started with FitForge">Get Started</button>
+  <section class="hero">
+    <div class="container">
+      <h2 class="animate__animated animate__fadeInLeft">Transform Your Love Life Today</h2>
+      <p class="animate__animated animate__fadeInRight">Discover proven strategies, e-books, and courses designed to help you build meaningful connections and lasting relationships.</p>
+      <a href="#products" class="cta-button animate__animated animate__pulse">Explore Our Resources</a>
     </div>
-    <img class="hero-image" src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Fit person training" />
   </section>
 
-  <section class="resources" aria-label="FitForge Resources">
-    <div class="card" tabindex="0">
-      <h3>Ultimate Training Guide</h3>
-      <p>A comprehensive, step-by-step workout system for fat loss and muscle building.</p>
-    </div>
-    <div class="card" tabindex="0">
-      <h3>Nutrition Plan Blueprint</h3>
-      <p>Science-backed strategies to fuel your body and mind with the right foods.</p>
-    </div>
-    <div class="card" tabindex="0">
-      <h3>Mindset Mastery</h3>
-      <p>Learn mental tools to stay motivated and overcome any obstacle on your journey.</p>
-    </div>
-    <div class="card" tabindex="0">
-      <h3>Community Support</h3>
-      <p>Connect with like-minded individuals and coaches who keep you accountable.</p>
+  <section id="products" class="products">
+    <div class="container">
+      <h2>Featured Resources</h2>
+      <div class="product-grid">
+        <div class="product-card animate__animated animate__fadeInUp">
+          <h3>FLIRTING ACROBAT | How To Flirt With Women Any Place</h3>
+          <p>Master the art of flirting and attract women effortlessly. This guide teaches you how to create chemistry and make a lasting impression in any situation.</p>
+          <a href="https://www.socialattractionguide.com/flirting-acrobat#aff=Damienxp" class="cta-button">Get It Now</a>
+        </div>
+        <div class="product-card animate__animated animate__fadeInUp">
+          <h3>Stealth Attraction | Member Area and Video Courses</h3>
+          <p>Discover the science of attraction and how to use it to your advantage. These video courses reveal the psychology behind attraction and how to apply it in real life.</p>
+          <a href="https://getherwetwithwords.com/videobc2/video-bc2/v02.php#aff=DilmikaSilva" class="cta-button">Get It Now</a>
+        </div>
+        <div class="product-card animate__animated animate__fadeInUp">
+          <h3>How To Date Any Girl</h3>
+          <p>Learn the secrets to dating any woman you desire. This guide provides practical tips and strategies to build confidence and attract the right partner.</p>
+          <a href="https://www.digistore24.com/redir/524168/Damienxp/" class="cta-button">Get It Now</a>
+        </div>
+        <div class="product-card animate__animated animate__fadeInUp">
+          <h3>7 Simple Scientific Tricks to Have ANY Woman You Want</h3>
+          <p>Use science-backed techniques to attract and keep the woman of your dreams. This guide reveals the psychology of attraction and how to make her obsessed with you.</p>
+          <a href="https://81fd78ocx2xpzvdzk1ozf-6cd0.hop.clickbank.net" class="cta-button">Get It Now</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 FitForge • All rights reserved.
+    <div class="container">
+      <p>&copy; 2024 LoveHacker. All rights reserved.</p>
+      <p>Follow us on <a href="https://www.instagram.com/lovehaker.7/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a> for more tips and updates!</p>
+    </div>
   </footer>
 </body>
-
 </html>
