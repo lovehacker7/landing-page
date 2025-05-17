@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Lunara - Elevate your smartphone experience. Clean design, modern features, and effortless elegance curated by Aria Nova." />
-  <meta name="keywords"
-    content="smartphone, luxury phone, modern tech, aria nova, elegant smartphone, minimalist, design, Lunara" />
+  <meta name="description" content="Lunara by Aria Nova - The apex of minimalist tech. Crafted for elegance, powered for excellence." />
+  <meta name="keywords" content="luxury smartphone, modern phone, premium tech, aria nova, Lunara, minimalist design, quiet luxury, design innovation" />
   <meta name="author" content="Lunara" />
-  <title>Lunara by Aria Nova - Effortless Elegance</title>
+  <title>Lunara by Aria Nova | Quiet Luxury in Motion</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --font-serif: 'Playfair Display', serif;
       --font-sans: 'Inter', sans-serif;
-      --color-bg: #f8f9fa;
+      --color-bg: #f4f4f6;
       --color-text: #1a1a1a;
-      --color-muted: #7a7a7a;
-      --color-primary: #1a1e29;
-      --color-accent: #d4af7f;
+      --color-muted: #6e6e73;
+      --color-primary: #0f1115;
+      --color-accent: #c2a76f;
       --color-card: #ffffff;
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -33,121 +33,123 @@
       font-family: var(--font-sans);
       background-color: var(--color-bg);
       color: var(--color-text);
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 16px;
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
-      padding: 4rem 1rem 2.5rem;
+      padding: 5rem 1.5rem 3rem;
       text-align: center;
       background-color: #fff;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #ddd;
     }
 
     header h1 {
       font-family: var(--font-serif);
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       color: var(--color-primary);
+      letter-spacing: -0.5px;
       margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--color-muted);
       font-weight: 300;
     }
 
     .hero {
-      background: linear-gradient(to right, #f5f4f2, #ffffff);
+      background: linear-gradient(to right, #f4f4f6, #ffffff);
       text-align: center;
-      padding: 5rem 1rem;
+      padding: 6rem 1.5rem 5rem;
     }
 
     .hero h2 {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: var(--color-primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero p {
-      max-width: 620px;
-      margin: 0 auto 2rem;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
       color: var(--color-muted);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
     }
 
     .cta-button {
       background-color: var(--color-primary);
       color: #fff;
-      padding: 0.9rem 2.5rem;
-      font-size: 1rem;
+      padding: 1rem 3rem;
+      font-size: 1.05rem;
       border: none;
       border-radius: 50px;
       font-weight: 500;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.35s ease;
     }
 
     .cta-button:hover {
-      background-color: #333b50;
-      transform: translateY(-2px);
+      background-color: #222733;
+      transform: translateY(-3px);
     }
 
     .products {
-      background-color: #fbfbfb;
-      padding: 5rem 1rem;
+      background-color: #fafafa;
+      padding: 6rem 1.5rem;
       text-align: center;
     }
 
     .products h2 {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--color-primary);
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      max-width: 1140px;
       margin: 0 auto;
     }
 
     .product-card {
       background-color: var(--color-card);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 2.2rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
     }
 
     .product-card h3 {
       font-family: var(--font-serif);
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
       color: var(--color-primary);
     }
 
     .product-card p {
       color: var(--color-muted);
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
     footer {
       background-color: #fff;
       text-align: center;
-      padding: 2.5rem 1rem;
-      color: #999;
+      padding: 3rem 1rem;
+      color: #aaa;
       font-size: 0.95rem;
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid #ddd;
     }
 
     footer a {
@@ -158,19 +160,20 @@
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .hero h2 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
 
       .cta-button {
-        padding: 0.8rem 2rem;
+        padding: 0.9rem 2.2rem;
+        font-size: 1rem;
       }
 
       .product-card {
-        padding: 1.5rem;
+        padding: 1.8rem;
       }
     }
   </style>
@@ -179,36 +182,36 @@
 <body>
   <header>
     <h1>Lunara by Aria Nova</h1>
-    <p>Modern elegance meets performance</p>
+    <p>Quiet Luxury. Timeless Design. Powerful Simplicity.</p>
   </header>
 
   <section class="hero">
-    <h2>Experience the Art of Simplicity</h2>
-    <p>Lunara redefines smartphones with a clean, minimalist approach. Curated by Aria Nova to reflect quiet luxury and smooth everyday use.</p>
-    <a href="#products" class="cta-button">Discover the Line</a>
+    <h2>Where Innovation Meets Aesthetic Grace</h2>
+    <p>Crafted with intention, Lunara devices embody understated elegance and future-forward functionality. This is the smartphone, refined.</p>
+    <a href="#products" class="cta-button">Explore Collection</a>
   </section>
 
   <section id="products" class="products">
-    <h2>Our Signature Devices</h2>
+    <h2>The Signature Collection</h2>
     <div class="product-grid">
       <div class="product-card">
         <h3>Lunara Pure</h3>
-        <p>Elegant, slim, and powerful. Designed for those who value aesthetics and clarity in every detail.</p>
+        <p>Minimal in form. Monumental in experience. Built for connoisseurs of clarity and precision.</p>
       </div>
       <div class="product-card">
         <h3>Lunara Focus</h3>
-        <p>For creators and professionals. Seamless multitasking, high-performance camera, and lasting battery life.</p>
+        <p>Engineered for creators. With studio-grade cameras and seamless speed, it redefines professional mobile use.</p>
       </div>
       <div class="product-card">
         <h3>Lunara Soft Edition</h3>
-        <p>Subtle tones, soft-touch finish, and calming interface. Perfect for mindful tech lovers.</p>
+        <p>Serene colors, smooth textures, and a UI that soothes. Mindful tech for mindful lives.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Lunara. Designed in collaboration with Aria Nova.</p>
-    <p>Connect with <a href="https://instagram.com/arianova" target="_blank">@arianova</a> for exclusive insights.</p>
+    <p>&copy; 2025 Lunara. Designed in collaboration with Aria Nova. All rights reserved.</p>
+    <p>Follow <a href="https://instagram.com/arianova" target="_blank">@arianova</a> for exclusive reveals & behind the scenes.</p>
   </footer>
 </body>
 
