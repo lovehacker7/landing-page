@@ -3,16 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FitForge | Transform Your Body & Mind</title>
   <style>
     :root {
-      --primary: #4CAF50;
-      --secondary: #A5D6A7;
-      --accent: #FFC107;
-      --dark: #2E3A2E;
-      --light: #F9FAF7;
+      --primary: #4caf50;
+      --secondary: #a5d6a7;
+      --accent: #ffc107;
+      --dark: #2e3a2e;
+      --light: #f9faf7;
       --text: #333333;
       --radius: 12px;
       --shadow-light: rgba(46, 58, 46, 0.1);
@@ -30,10 +29,14 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* HEADER */
     header {
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       background-color: var(--dark);
       color: var(--light);
       text-align: center;
@@ -41,24 +44,28 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 8px var(--shadow-light);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.15em;
       user-select: none;
+      border-bottom: 3px solid var(--accent);
     }
 
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
 
     header p {
-      margin-top: 0.4rem;
-      font-weight: 500;
+      font-weight: 600;
       font-style: italic;
       color: var(--secondary);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
+      font-size: 1.1rem;
     }
 
+    /* HERO SECTION */
     .hero {
       padding: 4rem 2rem;
       display: flex;
@@ -68,53 +75,89 @@
       text-align: center;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--light);
-      transition: all 0.5s ease-in-out;
       border-radius: var(--radius);
       margin: 2rem;
       box-shadow: 0 14px 40px rgba(76, 175, 80, 0.3);
+      overflow: hidden;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content {
+      max-width: 600px;
+      z-index: 2;
     }
 
     .hero h2 {
-      font-size: 3rem;
+      font-size: 3.4rem;
       margin-bottom: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
     .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
+      font-size: 1.4rem;
       line-height: 1.5;
-      font-weight: 500;
-      color: var(--light);
-      margin-bottom: 2rem;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     }
 
+    /* CTA BUTTON */
     .cta-button {
-      margin-top: 0;
-      padding: 0.85rem 2.5rem;
-      background: var(--light);
-      color: var(--primary);
+      padding: 1rem 3rem;
+      background: linear-gradient(90deg, #ffc107 0%, #ffb300 100%);
+      color: var(--dark);
       border: none;
       border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.15rem;
+      font-weight: 800;
+      font-size: 1.3rem;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+      transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.5);
       user-select: none;
+      letter-spacing: 0.05em;
+      filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.1));
     }
 
     .cta-button:hover,
     .cta-button:focus {
-      background: var(--accent);
+      background: linear-gradient(90deg, #fff176 0%, #fbc02d 100%);
       color: var(--dark);
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(255, 193, 7, 0.45);
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 18px 40px rgba(255, 193, 7, 0.65);
       outline: none;
     }
 
+    /* Hero image placeholder */
+    .hero-image {
+      margin-top: 3rem;
+      max-width: 420px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 14px 40px rgba(46, 58, 46, 0.15);
+      transition: transform 0.3s ease;
+      user-select: none;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    }
+
+    .hero-image:hover {
+      transform: scale(1.03) translateY(-5px);
+    }
+
+    /* RESOURCES GRID */
     .resources {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -128,47 +171,79 @@
 
     .card {
       background-color: #ffffff;
-      padding: 2rem;
+      padding: 2.2rem 2rem;
       border-radius: var(--radius);
       box-shadow: 0 12px 30px var(--shadow-light);
-      transition: all 0.3s ease-in-out;
-      cursor: default;
+      transition: all 0.35s ease-in-out;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      position: relative;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 40px rgba(46, 58, 46, 0.15);
+    .card:hover,
+    .card:focus {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(46, 58, 46, 0.2);
+      background-color: #f9fff9;
+      outline: none;
     }
 
+    /* Icon before card title */
     .card h3 {
       color: var(--dark);
       margin-bottom: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.05em;
-      font-size: 1.35rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Simple emoji icons for demo (replace with SVG icons if you want) */
+    .card h3::before {
+      content: "🔥";
+      font-size: 1.6rem;
+      display: inline-block;
+      transform: translateY(2px);
+    }
+
+    .card:nth-child(2) h3::before {
+      content: "🥗";
+    }
+
+    .card:nth-child(3) h3::before {
+      content: "🧠";
+    }
+
+    .card:nth-child(4) h3::before {
+      content: "🤝";
     }
 
     .card p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: #555555;
-      line-height: 1.5;
+      line-height: 1.6;
       font-weight: 500;
       flex-grow: 1;
     }
 
+    /* FOOTER */
     footer {
-      background-color: var(--dark);
+      background-color: #3b4a3b;
       color: var(--light);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.8rem 1rem;
       letter-spacing: 0.1em;
       font-weight: 500;
+      font-size: 0.9rem;
       user-select: none;
+      margin-top: auto;
     }
 
+    /* RESPONSIVE LAYOUT */
     @media (min-width: 768px) {
       .hero {
         flex-direction: row;
@@ -177,13 +252,43 @@
         margin: 4rem 3rem 2rem 3rem;
       }
 
+      .hero-content {
+        max-width: 480px;
+      }
+
       .hero h2 {
-        font-size: 4rem;
+        font-size: 4.5rem;
+        line-height: 1.05;
       }
 
       .hero p {
         font-size: 1.5rem;
-        max-width: 480px;
+        margin-bottom: 3rem;
+      }
+
+      .hero-image {
+        margin-top: 0;
+        max-width: 460px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 2.6rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -195,12 +300,13 @@
     <p>Your Ultimate Transformation Hub</p>
   </header>
 
-  <section class="hero">
-    <div>
+  <section class="hero" aria-label="Hero Section with call to action">
+    <div class="hero-content">
       <h2>Forge Your New Self</h2>
       <p>Join thousands who’ve transformed their lives through dedication, mindset, and strategic training.</p>
       <button class="cta-button" aria-label="Get Started with FitForge">Get Started</button>
     </div>
+    <img class="hero-image" src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=600&q=80" alt="Fit person training" />
   </section>
 
   <section class="resources" aria-label="FitForge Resources">
