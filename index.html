@@ -80,6 +80,7 @@
       box-shadow: 0 14px 40px rgba(76, 175, 80, 0.3);
       overflow: hidden;
       animation: fadeInUp 1s ease forwards;
+      align-items: stretch; /* Asegura que hijos tengan la misma altura */
     }
 
     @keyframes fadeInUp {
@@ -87,6 +88,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -143,9 +145,11 @@
 
     /* Hero image placeholder */
     .hero-image {
-      margin-top: 3rem;
-      max-width: 420px;
+      flex: 1;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       border-radius: var(--radius);
       box-shadow: 0 14px 40px rgba(46, 58, 46, 0.15);
       transition: transform 0.3s ease;
@@ -250,6 +254,7 @@
         text-align: left;
         justify-content: space-around;
         margin: 4rem 3rem 2rem 3rem;
+        align-items: stretch; /* Asegura que hijos tengan misma altura */
       }
 
       .hero-content {
@@ -267,8 +272,8 @@
       }
 
       .hero-image {
-        margin-top: 0;
-        max-width: 460px;
+        max-width: none; /* El flex:1 controla el tamaño */
+        height: auto; /* Mantener altura natural en móvil */
       }
     }
 
@@ -319,17 +324,17 @@
       <p>Science-backed strategies to fuel your body and mind with the right foods.</p>
     </div>
     <div class="card" tabindex="0">
-      <h3>Mindset Mastery Course</h3>
-      <p>Learn how to build mental toughness and unlock your true potential.</p>
+      <h3>Mindset Mastery</h3>
+      <p>Learn mental tools to stay motivated and overcome any obstacle on your journey.</p>
     </div>
     <div class="card" tabindex="0">
-      <h3>FitForge Community</h3>
-      <p>Connect with like-minded individuals who share your passion for growth and greatness.</p>
+      <h3>Community Support</h3>
+      <p>Connect with like-minded individuals and coaches who keep you accountable.</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 FitForge. All Rights Reserved.</p>
+    &copy; 2025 FitForge • All rights reserved.
   </footer>
 </body>
 
