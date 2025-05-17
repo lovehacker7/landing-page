@@ -1,68 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GlowMuse by Sophie Rivera - Empowering Your Beauty Journey. Explore beauty tips, exclusive products, and wellness tools handpicked by your favorite influencer.">
-  <meta name="keywords" content="beauty, influencer, wellness, skincare, Sophie Rivera, makeup tips, GlowMuse">
-  <meta name="author" content="GlowMuse">
-  <title>GlowMuse by Sophie Rivera</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="TechMuse x Aria Nova - The most stylish and powerful smartphones, powered by innovation and endorsed by your favorite influencer Aria Nova.">
+  <meta name="keywords" content="smartphone, Aria Nova, tech influencer, mobile, gadgets, stylish phone, Android, iPhone alternative">
+  <meta name="author" content="TechMuse">
+  <title>TechMuse x Aria Nova - Style Meets Innovation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/png" href="https://imgur.com/yourbrandicon.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      background-color: #ff477e;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e63c70;
+    }
+
+    .products {
+      background-color: #f4f4f4;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background-color: #1f1f1f;
+      color: white;
+    }
+
+    footer a {
+      color: #ff477e;
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <div class="container">
-      <img src="https://imgur.com/yourbrandicon.png" alt="GlowMuse Logo" class="logo animate__animated animate__fadeIn">
-      <h1 class="animate__animated animate__fadeInDown">GlowMuse</h1>
-      <p class="tagline animate__animated animate__fadeInUp">by Sophie Rivera - Empowering Your Beauty Journey</p>
-    </div>
+    <img src="https://i.imgur.com/aBHZdYB.png" alt="TechMuse Logo" class="logo animate__animated animate__fadeIn">
+    <h1 class="animate__animated animate__fadeInDown">TechMuse x Aria Nova</h1>
+    <p class="animate__animated animate__fadeInUp">The smartphone brand designed for creators, dreamers and trendsetters.</p>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h2 class="animate__animated animate__fadeInLeft">Glow Like Never Before</h2>
-      <p class="animate__animated animate__fadeInRight">Get inspired by Sophie Rivera's handpicked wellness and beauty essentials. Join a movement of radiant, empowered women.</p>
-      <a href="#featured" class="cta-button animate__animated animate__pulse">Discover My Favorites</a>
-    </div>
+    <h2 class="animate__animated animate__fadeInLeft">Smartphones that Match Your Vibe</h2>
+    <p class="animate__animated animate__fadeInRight">Curated by Aria Nova, TechMuse brings you bold designs, powerful performance and cameras made for TikTok, Reels and everything in between.</p>
+    <a href="#products" class="cta-button animate__animated animate__pulse">Shop the Collection</a>
   </section>
 
-  <section id="featured" class="products">
-    <div class="container">
-      <h2>My Must-Have Picks</h2>
-      <div class="product-grid">
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>Glow Elixir Serum</h3>
-          <p>Hydrate and brighten your skin with this lightweight, all-natural serum that Sophie swears by.</p>
-          <a href="https://yourshoplink.com/glowelixir" class="cta-button">Shop Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>Mind & Mood Journal</h3>
-          <p>Achieve mental clarity and emotional balance with Sophie's daily journal routine. Beautifully crafted for reflection and wellness.</p>
-          <a href="https://yourshoplink.com/journal" class="cta-button">Shop Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>Everyday Glow Routine</h3>
-          <p>Sophie’s exclusive 4-step skincare routine designed for a radiant and healthy look — even on busy days.</p>
-          <a href="https://yourshoplink.com/glowroutine" class="cta-button">Shop Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>Inner Peace Candle Set</h3>
-          <p>Create a calm, inviting space with these aromatherapy candles curated by Sophie to elevate your vibe.</p>
-          <a href="https://yourshoplink.com/candles" class="cta-button">Shop Now</a>
-        </div>
+  <section id="products" class="products">
+    <h2>Aria's Top Picks</h2>
+    <div class="product-grid">
+      <div class="product-card animate__animated animate__fadeInUp">
+        <h3>TechMuse Nova Pro</h3>
+        <p>4K camera, ultra-fast charging, and sleek metallic finishes. Perfect for vloggers and on-the-go creators.</p>
+        <a href="#" class="cta-button">Buy Now</a>
+      </div>
+      <div class="product-card animate__animated animate__fadeInUp">
+        <h3>TechMuse LiteGlow</h3>
+        <p>Lightweight and powerful, with pastel matte colors Aria helped design. Pure aesthetic goals.</p>
+        <a href="#" class="cta-button">Buy Now</a>
+      </div>
+      <div class="product-card animate__animated animate__fadeInUp">
+        <h3>Creator Bundle</h3>
+        <p>Includes Nova Pro, wireless earbuds, magnetic case, and Aria's exclusive phone charm.</p>
+        <a href="#" class="cta-button">Get the Bundle</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 GlowMuse by Sophie Rivera. All rights reserved.</p>
-      <p>Follow Sophie on <a href="https://www.instagram.com/sophierivera" target="_blank">Instagram</a> for daily beauty tips and lifestyle inspo!</p>
-    </div>
+    <p>&copy; 2025 TechMuse. Powered by Aria Nova.</p>
+    <p>Follow <a href="https://instagram.com/arianova" target="_blank">@arianova</a> for tips, reviews, and behind the scenes!</p>
   </footer>
 </body>
-</html>
 
+</html>
