@@ -26,7 +26,6 @@
       display: flex; flex-direction: column;
       min-height: 100vh;
     }
-    /* Desktop subtle texture and accents */
     @media (min-width: 1200px) {
       body {
         background-image:
@@ -75,7 +74,7 @@
       width: 100%;
       max-height: 300px;
       object-fit: cover;
-      border-radius: var(--radius)  var(--radius) 0 0;
+      border-radius: var(--radius) var(--radius) 0 0;
     }
     .hero h2 {
       font-size: 2.8rem;
@@ -184,7 +183,6 @@
     }
     .footer-link:hover { opacity: 0.7; }
 
-    /* Responsive-specific visual accents */
     @media (max-width: 767px) {
       .hero { border: 2px solid var(--secondary); }
       header { box-shadow: 0 4px 6px rgba(0,0,0,0.15); }
@@ -212,7 +210,12 @@
   </header>
 
   <section class="hero" aria-label="FitForge Hero">
-    <img src="https://images.unsplash.com/photo-1594737625785-b5e17b3b62c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Person doing push-ups" />
+    <!-- reliable, random fitness shot -->
+    <img
+      src="https://source.unsplash.com/random/1200x300/?fitness,workout"
+      width="1200" height="300"
+      alt="Person doing push-ups"
+    />
     <div class="hero-content">
       <h2>Forge Your New Self</h2>
       <p>Join a community of driven individuals sculpting their bodies and minds to reach their true potential.</p>
@@ -222,56 +225,60 @@
 
   <section class="resources" aria-label="FitForge Resources">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1571019613915-5eeb3943f6f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Workout guide" />
+      <img
+        src="https://source.unsplash.com/random/400x160/?strength,training"
+        width="400" height="160"
+        alt="Workout guide"
+      />
       <div class="card-content">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0l1.176 3.618h3.802L9.41 5.764l1.176 3.618L8 7.236 5.414 9.382l1.176-3.618L3.022 3.618h3.802L8 0z"/></svg>
-          Ultimate Training Guide
-        </h3>
+        <h3>… Ultimate Training Guide</h3>
         <p>A step-by-step workout system for fat loss and muscle building.</p>
         <button class="btn" onclick="window.open('https://example.com/ultimate-training-guide','_blank')">Learn More</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1544025162-3d6d2a3c106d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Healthy meal prep" />
+      <img
+        src="https://source.unsplash.com/random/400x160/?meal,healthy"
+        width="400" height="160"
+        alt="Healthy meal prep"
+      />
       <div class="card-content">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M3 2h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/></svg>
-          Nutrition Plan Blueprint
-        </h3>
+        <h3>… Nutrition Plan Blueprint</h3>
         <p>Science-backed strategies to fuel your body and mind.</p>
         <button class="btn" onclick="window.open('https://example.com/nutrition-plan','_blank')">Learn More</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Meditation session" />
+      <img
+        src="https://source.unsplash.com/random/400x160/?mindfulness,meditation"
+        width="400" height="160"
+        alt="Meditation session"
+      />
       <div class="card-content">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/></svg>
-          Mindset Mastery Course
-        </h3>
+        <h3>… Mindset Mastery Course</h3>
         <p>Build mental toughness and unlock your full potential.</p>
         <button class="btn" onclick="window.open('https://example.com/mindset-mastery','_blank')">Learn More</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Group workout session" />
+      <img
+        src="https://source.unsplash.com/random/400x160/?group,workout"
+        width="400" height="160"
+        alt="Group workout session"
+      />
       <div class="card-content">
-        <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zM3 11h10v-2H3zm0-3h10V6H3z"/></svg>
-          Accountability Program
-        </h3>
-        <p>Stay motivated with coaching, check-ins, and a supportive tribe.</p>
+        <h3>… Accountability Program</h3>
+        <p>Stay motivated with coaching, check‑ins, and a supportive tribe.</p>
         <button class="btn" onclick="window.open('https://example.com/accountability','_blank')">Learn More</button>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 FitForge. All Rights Reserved.<br>
+    © 2025 FitForge. All Rights Reserved.<br/>
     <a href="https://instagram.com/fitforge" target="_blank" aria-label="FitForge Instagram" class="footer-link">Instagram</a>
   </footer>
 </body>
