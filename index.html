@@ -1,67 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LoveHacker - Your ultimate guide to mastering dating and relationships. Discover proven strategies, e-books, and courses to transform your love life.">
-  <meta name="keywords" content="dating, relationships, love, e-books, dating tips, love language, flirting, attraction, LoveHacker">
-  <meta name="author" content="LoveHacker">
-  <title>LoveHacker - Master the Art of Dating and Relationships</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="icon" type="image/png" href="https://imgur.com/32GtTrB.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitForge | Transform Your Body & Mind</title>
+  <!-- Google Font for a cleaner look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4caf50;
+      --secondary: #a5d6a7;
+      --accent: #ffc107;
+      --dark: #2e3a2e;
+      --light: #f9faf7;
+      --text: #333333;
+      --radius: 12px;
+      --shadow: rgba(46, 58, 46, 0.1);
+      --transition: 0.4s ease;
+    }
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      display: flex; flex-direction: column;
+      min-height: 100vh;
+    }/* Desktop subtle texture and accents */
+@media (min-width: 1200px) {
+  body {
+    background-image:
+      radial-gradient(circle at top left, rgba(255,255,255,0.15) 1px, transparent 1px),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  header {
+    border-bottom: 4px solid var(--accent);
+  }
+  .card {
+    border: 1px solid rgba(46,58,46,0.05);
+  }
+  .card h3 {
+    position: relative;
+  }
+  .card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; left: 0;
+    width: 40px; height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+}
+
+header {
+  padding: 1.5rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  position: sticky; top: 0;
+  box-shadow: 0 2px 8px var(--shadow);
+  z-index: 10;
+}
+header h1 { font-size: 2rem; font-weight: 800; letter-spacing: 2px; }
+header p { font-weight: 600; color: var(--secondary); }
+
+.hero {
+  margin: 2rem 1rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--light);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Removed decorative images for a cleaner look */
+}
+.hero h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  background: var(--accent);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--transition);
+  z-index: 1;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-20deg);
+  transition: left var(--transition);
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:hover::before {
+  left: 200%;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  margin: auto;
+  width: 100%; max-width: 1200px;
+}
+.card {
+  background: var(--light);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex; flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px var(--shadow);
+}
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.card svg {
+  width: 1.5rem; height: 1.5rem;
+  margin-right: 0.6rem;
+}
+.card p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+.card .btn {
+  align-self: flex-start;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  margin-top: auto;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  transition: background var(--transition), color var(--transition);
+}
+.card .btn:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+footer {
+  margin-top: auto;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1.5rem;
+}
+.footer-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity var(--transition);
+}
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+/* Responsive-specific visual accents */
+@media (max-width: 767px) {
+  .hero {
+    border: 2px solid var(--secondary);
+  }
+  header {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  }
+  .resources {
+    padding: 1rem;
+  }
+  .card h3::after {
+    display: none;
+  }
+  .card {
+    border-left: 4px solid var(--primary);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    padding: 3rem;
+    margin: 3rem 2rem;
+  }
+  .hero h2 { font-size: 3.6rem; }
+  .hero p  { font-size: 1.25rem; }
+}
+
+  </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <img src="https://imgur.com/32GtTrB.png" alt="LoveHacker Logo" class="logo animate__animated animate__fadeIn">
-      <h1 class="animate__animated animate__fadeInDown">LoveHacker</h1>
-      <p class="tagline animate__animated animate__fadeInUp">Your Ultimate Guide to Mastering Dating and Relationships</p>
+    <h1>FitForge</h1>
+    <p>Your Ultimate Transformation Hub</p>
+  </header>  <section class="hero" aria-label="FitForge Hero">
+    <div class="hero-content">
+      <h2>Forge Your New Self</h2>
+      <p>Join a community of driven individuals sculpting their bodies and minds to reach their true potential.</p>
+      <button class="btn" aria-label="Get Started with FitForge">Get Started</button>
     </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h2 class="animate__animated animate__fadeInLeft">Transform Your Love Life Today</h2>
-      <p class="animate__animated animate__fadeInRight">Discover proven strategies, e-books, and courses designed to help you build meaningful connections and lasting relationships.</p>
-      <a href="#products" class="cta-button animate__animated animate__pulse">Explore Our Resources</a>
+    <!-- Decorative images removed for a cleaner, influencer-focused look -->
+  </section>  <section class="resources" aria-label="FitForge Resources">
+    <div class="card">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0l1.176 3.618h3.802L9.41 5.764l1.176 3.618L8 7.236 5.414 9.382l1.176-3.618L3.022 3.618h3.802L8 0z"/></svg>
+        Ultimate Training Guide
+      </h3>
+      <p>A step-by-step workout system for fat loss and muscle building.</p>
+      <button class="btn" onclick="window.open('https://example.com/ultimate-training-guide','_blank')">Learn More</button>
     </div>
-  </section>
-
-  <section id="products" class="products">
-    <div class="container">
-      <h2>Featured Resources</h2>
-      <div class="product-grid">
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>FLIRTING ACROBAT | How To Flirt With Women Any Place</h3>
-          <p>Master the art of flirting and attract women effortlessly. This guide teaches you how to create chemistry and make a lasting impression in any situation.</p>
-          <a href="https://www.socialattractionguide.com/flirting-acrobat#aff=Damienxp" class="cta-button">Get It Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>Stealth Attraction | Member Area and Video Courses</h3>
-          <p>Discover the science of attraction and how to use it to your advantage. These video courses reveal the psychology behind attraction and how to apply it in real life.</p>
-          <a href="https://getherwetwithwords.com/videobc2/video-bc2/v02.php#aff=DilmikaSilva" class="cta-button">Get It Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>How To Date Any Girl</h3>
-          <p>Learn the secrets to dating any woman you desire. This guide provides practical tips and strategies to build confidence and attract the right partner.</p>
-          <a href="https://www.digistore24.com/redir/524168/Damienxp/" class="cta-button">Get It Now</a>
-        </div>
-        <div class="product-card animate__animated animate__fadeInUp">
-          <h3>7 Simple Scientific Tricks to Have ANY Woman You Want</h3>
-          <p>Use science-backed techniques to attract and keep the woman of your dreams. This guide reveals the psychology of attraction and how to make her obsessed with you.</p>
-          <a href="https://81fd78ocx2xpzvdzk1ozf-6cd0.hop.clickbank.net" class="cta-button">Get It Now</a>
-        </div>
-      </div>
+    <div class="card">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M3 2h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/></svg>
+        Nutrition Plan Blueprint
+      </h3>
+      <p>Science-backed strategies to fuel your body and mind.</p>
+      <button class="btn" onclick="window.open('https://example.com/nutrition-plan','_blank')">Learn More</button>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 LoveHacker. All rights reserved.</p>
-      <p>Follow us on <a href="https://www.instagram.com/lovehaker.7/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a> for more tips and updates!</p>
+    <div class="card">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/></svg>
+        Mindset Mastery Course
+      </h3>
+      <p>Build mental toughness and unlock your full potential.</p>
+      <button class="btn" onclick="window.open('https://example.com/mindset-mastery','_blank')">Learn More</button>
     </div>
+    <div class="card">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zM3 11h10v-2H3zm0-3h10V6H3z"/></svg>
+        Accountability Program
+      </h3>
+      <p>Stay motivated with coaching, check-ins, and a supportive tribe.</p>
+      <button class="btn" onclick="window.open('https://example.com/accountability','_blank')">Learn More</button>
+    </div>
+  </section>  <footer>
+    © 2025 FitForge. All Rights Reserved.
+    <br>
+    <a href="https://instagram.com/fitforge" target="_blank" aria-label="FitForge Instagram" class="footer-link">Instagram</a>
   </footer>
 </body>
 </html>
